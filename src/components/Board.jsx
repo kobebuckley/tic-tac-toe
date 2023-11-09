@@ -1,13 +1,18 @@
 import { useState } from 'react'
 
-
 function Board() {
   const [count, setCount] = useState(0)
+
+  const board = [
+    [0,0,0],
+    [0,0,0],
+    [0,0,0]
+]
 
   return (
     <>
       <div>
-     The Game Board Goes Here
+     Here are the values inside of the board {board}
       </div>
      
     </>
