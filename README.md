@@ -32,9 +32,13 @@ Technologies: React + Tailwind CSS
 What is the minimum viable product that makes a tic tac toe game?
 
 3 x 3 Board
+
 2 players - human or AI
+
 Each player assigned an ‘X’ or ‘O’
+
 A way to select a spot in the board that is open
+
 If a row or column or diagonal has 3 of the same letter, then that player is the winner.
 
 3 x 3 Board
