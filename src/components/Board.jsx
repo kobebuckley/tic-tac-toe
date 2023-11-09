@@ -1,22 +1,38 @@
 import { useState } from 'react'
 
-function Board() {
-  const [count, setCount] = useState(0)
+// the board will need its state updated based on whose turn it is
 
-  const board = [
-    [0,0,0],
-    [0,0,0],
-    [0,0,0]
-]
+// the value changes should be reflected as well
 
-  return (
-    <>
+// aim to use an optimal algorithm / data structure
+
+// so using a nested loop or the map function in JS
+
+// the map goes over the row and column to find a every single cell and return a value. 
+
+// if the value is a blank string, then it will display as _ indicating it can be chosen
+
+const Board = () => {
+    
+    const board = [
+      ['','X',''],
+      ['','X',''],
+      ['X','','O']
+    ]
+
+    return (    
       <div>
-     Here are the values inside of the board {board}
+        Here is where we will display the entire board
+        {board.map((row, rowIndex) => (
+          <div key={rowIndex}>
+            {row.map((cell, colIndex) => (
+              <span key={colIndex}>{cell === '' ? '_' : cell}</span>
+            ))}
+          </div>
+        ))}
       </div>
-     
-    </>
-  )
-}
+  );
+};
+
 
 export default Board
