@@ -21,8 +21,9 @@ const Board = () => {
     ]
 
     return (    
-      <div>
-        Here is where we will display the entire board
+
+    <div className="flex items-center justify-center h-screen">
+        <h1 className="text-3xl font-bold underline">Tic Tac Toe Board</h1>
         {board.map((row, rowIndex) => (
           <div key={rowIndex}>
             {row.map((cell, colIndex) => (
@@ -31,6 +32,7 @@ const Board = () => {
           </div>
         ))}
       </div>
+
   );
 };
 
