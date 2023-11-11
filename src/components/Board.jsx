@@ -15,22 +15,22 @@ import { useState } from 'react'
 const Board = () => {
     
     const board = [
-      ['','X',''],
-      ['','X',''],
-      ['X','','O']
+      ['X','X','O'],
+      ['O','X',''],
+      ['X','X','O']
     ]
 
     return (    
 
-    <div className="flex items-center justify-center h-screen">
+    <div className="flex items-center justify-center h-screen border-8 border-green-500">
       
-      <div id='game-board'>
+      <div id='game-board' className='p-4 border-8 border-sky-500'>
 
         {/* <h1 className="text-3xl font-bold underline">Tic Tac Toe Board</h1> */}
         {board.map((row, rowIndex) => (
-          <div key={rowIndex}>
+          <div className='p-16 m-2 items-center justify-center border-8 border-gray-800' key={rowIndex}>
             {row.map((cell, colIndex) => (
-              <span key={colIndex}>{cell === '' ? '_' : cell}</span>
+              <span className='p-16 border-4  border-purple-700' key={colIndex}>{cell === '' ? '_' : cell}</span>
             ))}
           </div>
         ))}
