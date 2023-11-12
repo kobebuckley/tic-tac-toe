@@ -20,6 +20,8 @@ const Board = () => {
       ['X','X','O']
     ]
 
+    {/** basic test over */}
+
     return (    
 
     <div className="flex items-center justify-center h-screen border-8 border-green-500">
