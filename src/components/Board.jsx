@@ -33,6 +33,7 @@ const Board = () => {
         {board.map((row, rowIndex) => (
           <div className='p-16 m-2 items-center justify-center border-8 border-gray-800' key={rowIndex}>
             {row.map((cell, colIndex) => (
+              
               <span className=' p-16 m-2 items-center justify-center border-8 border-purple-800' key={colIndex}>{cell === '' ? '__' : cell}</span>
             ))}
           </div>
