@@ -1,0 +1,29 @@
+
+/*margin fixed scroll wheel from 100 vh*/
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+.Tile {
+    height: 100px;
+    width: 100px;
+    background-color: aqua;
+}
+
+.Board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    background-color: black;
+    width: min-content;
+    height: min-content;
+    padding:10px;
+    gap: 5px;
+}
+
+.App {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 100vh;
+}
