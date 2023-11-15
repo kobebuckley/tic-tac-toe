@@ -6,12 +6,22 @@ import './App.css'
 function App() {
 
   const [boardData, setBoardData] = useState([null,null,null,null,null,null,null,null,null])
+  const [player, setPlayer] = useState('X')
+
+  const switchPlayer = () => {
+    if(player === 'X') {
+      setPlayer('O');
+    } else {
+      setPlayer('X')
+    }
+  }
 
   const updateBoard = (index) => {
     const newBoardData = [...boardData];
     if(newBoardData[index] === null) {
-      newBoardData[index] = 'test here';
-      setBoardData(newBoardData)
+      newBoardData[index] = player;
+      setBoardData(newBoardData);
+      switchPlayer()
     }
   }
 
