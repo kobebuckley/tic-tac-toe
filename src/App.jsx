@@ -71,8 +71,8 @@ function App() {
   
   return (
     <div className="App">
-    {checkForWinner()}
       <Board/>
+    {checkForWinner() ? <h1>Player {checkForWinner()} has won</h1> : null}
     </div>
   )
 }
