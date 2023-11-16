@@ -8,6 +8,29 @@ function App() {
   const [boardData, setBoardData] = useState([null,null,null,null,null,null,null,null,null])
   const [player, setPlayer] = useState('X')
 
+  const checkForWinner = () => {
+    const winningCombos = [
+      [0,1,2],
+      [3,4,5],
+      [6,7,8],
+      [0,3,6],
+      [1,4,7],
+      [2,5,8],
+      [0,4,8],
+      [2,4,6]
+    ]
+
+  for ( let i = 0; i < winningCombos.length; i++){
+    const [a,b,c] = winningCombos[i];
+    if (boardData[a] && boardData[a] === boardData[b] && boardData[a] === boardData[c]){
+      console.log('winner', boardData[a])
+      return(boardData[a])
+    }
+  }
+  return(null)
+}
+  
+
   const switchPlayer = () => {
     if(player === 'X') {
       setPlayer('O');
@@ -48,6 +71,7 @@ function App() {
   
   return (
     <div className="App">
+    {checkForWinner()}
       <Board/>
     </div>
   )
