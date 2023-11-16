@@ -8,6 +8,16 @@ function App() {
   const [boardData, setBoardData] = useState([null,null,null,null,null,null,null,null,null])
   const [player, setPlayer] = useState('X')
 
+  const checkForTie = () => {
+    let isTie = true
+    boardData.forEach((value)=> {
+      if ( value === null){
+        isTie = false;
+      }
+    })
+    return isTie
+  }
+
   const checkForWinner = () => {
     const winningCombos = [
       [0,1,2],
@@ -19,6 +29,10 @@ function App() {
       [0,4,8],
       [2,4,6]
     ]
+
+    if(checkForTie()) {
+      return 'Tie'
+    }
 
   for ( let i = 0; i < winningCombos.length; i++){
     const [a,b,c] = winningCombos[i];
@@ -72,7 +86,8 @@ function App() {
   return (
     <div className="App">
       <Board/>
-    {checkForWinner() ? <h1>Player {checkForWinner()} has won</h1> : null}
+    {checkForWinner() ? checkForWinner() === 'Tie'? <h1>There's a Tie!</h1> : <h1>Player {checkForWinner()} has won</h1> : null}
+    {checkForWinner() ? <button onClick={() => setBoardData([null,null,null,null,null,null,null,null,null])}>New Game</button> : null}
     </div>
   )
 }
