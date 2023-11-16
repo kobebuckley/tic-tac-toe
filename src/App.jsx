@@ -30,17 +30,21 @@ function App() {
       [2,4,6]
     ]
 
-    if(checkForTie()) {
-      return 'Tie'
-    }
 
   for ( let i = 0; i < winningCombos.length; i++){
     const [a,b,c] = winningCombos[i];
+
     if (boardData[a] && boardData[a] === boardData[b] && boardData[a] === boardData[c]){
-      console.log('winner', boardData[a])
+      // console.log('winner', boardData[a])
       return(boardData[a])
     }
+
   }
+
+  if(checkForTie()) {
+    return 'Tie'
+  }
+  
   return(null)
 }
   
